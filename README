@@ -1,0 +1,101 @@
+grid system v2
+
+this is the modern grid system, better than my other one :)
+
+what is this?
+
+        a grid system written in d. because i love d (pause) and i like feeling
+        safe while i write my code. i don't wanna worry about any RAMV (random
+        ass memory violations) or "why the HELL is this cube there when it's
+        supposed to be erased" issues.
+
+        this grid system was co-typed with ChatGPT, any good code you see here i
+        did not write. confirmed.
+
+how it works:
+
+        (i'd directly steal from my tinysoccer definition, but sure let's be
+        creative)
+        
+        there's a simple integer array that is defined with two different
+        values, x and y. simply creating a 2D array, which technically isn't a
+        "grid" but can be utilized as such.
+
+        this is a visualization of what a 2D array looks like, 3x3, in the d
+        programming language:
+
+                [1, 2, 3]
+                [4, 5, 6]
+                [7, 8, 9]
+
+        except, it's not an integer array this time. YUP. its a character array
+        instead. the thought process behind this decision is that it is more
+        aesthetically pleasing on the eyes, instead of seeing ones zeroes and
+        god knows what else. so to be safe, more... 'known' characters were used
+        instead.
+        
+        in geeksforgeeks, their Game of Life example uses two characters, '.'
+        and '*', which are used to denote "alive" and "dead" respectively...
+        well not technically dead, but not alive.
+
+        i GUESSSSS???? you could say the array is more of a "matrix", but i dont
+        understand any of that fancy math stuff so im sticking to the definition
+        of an array.
+
+            (grid operations (create, destroy, swap, move))
+
+                as you could probably guess, the grid can be operated on. it's
+                mutable (in super fancy rust terms). you are able to move
+                points, set points, check for points, pretty much any REGULAR
+                basic action you can perform inside of grids.
+
+                you are able to find instances of entities, and return specific
+                locations using the Coordinate structure. and depending on your
+                "ALIVE" character set, you can check if there are ALIVE members
+                in your grid.
+
+                now you're probably telling yourself, what is the difference
+                between swapping (appointing) and 'setting' points? it's
+                pretty much the same thing. but the only REAL difference is that
+                with swapping, there are pretty much 0 checks and it will simply
+                add the point onto the grid. when you 'set' a point, most likely
+                an entity using 'set', it has checks beforehand to ensure the
+                entity isn't already there or isn't at the same point.
+
+                the easiest way to check this is by checking
+                `return_instances()`' length, if it's 0 then that means there's
+                most likely no instance of that point in the grid. therefore no
+                trace of it on the actual grid map. and unless there's a wild
+                bug you shouldn't be able to see it on your actual grid when you
+                print it (HONOURABLE AcITON MENTION BY THE WAY!!!!)
+
+                you are also able to change the characters in a grid by simply
+                changing the constants in the grid module. 95% of the code has
+                been ported to stop using magic values, therefore you have
+                pretty much no hassles if you're trying to switch the
+                characters, as long as they're different. if they're the same
+                you may run into some... unexpected behaviour.
+
+        all in all this library is much more flavorful, featureful and compact
+        than my last library, which wasn't really an entire library, more like a
+        little thrown together college project to make a simple soccer game with
+        ones and zeroes.
+
+        however do not get me wrong, this library takes HEAVY HEAVY code off of
+        the old base, simply expanding it and having more checks to ensure no
+        unexpected behaviour takes place, like the last app's glitch with the
+        enemy and player AI going out of bounds and just disappearing forever.
+
+applications:
+
+        this library is good for designing applications such as the game of
+        life, snake, and other generational or procedural based games. the heart
+        and soul of this library is based in ascii art, and it's enjoyable to
+        see your changes take place in real time.
+
+license:
+
+        this software is licensed under the MIT license. what? that makes
+        absolutely zero sense but i dont care . at all.
+
+        questions? email me @ <gkai70263@gmail.com>
